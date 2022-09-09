@@ -1,0 +1,21 @@
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <input type="checkbox" id="cbox2" value="second_checkbox" >
+      <label for="cbox2"><%= link_to task.title, task_path(task) %>
+      </label>
+      <br>
+
+      <%= link_to "Delete",
+      task_path(task),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+
+    </li>
+
+
+  <% end %>
+
+ <h2><%= link_to " + New task ", tasks_new_path %> </h2>
+
+
+</ul>
